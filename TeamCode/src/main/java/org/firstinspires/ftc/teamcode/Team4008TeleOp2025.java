@@ -43,11 +43,6 @@ public class Team4008TeleOp2025 extends LinearOpMode {
 //            double rx = -gamepad1.right_stick_x;
 
 
-          /*  if (robot.Touched.isPressed()) {
-                telemetry.addData("Touch", robot.Touched.isPressed());
-                telemetry.update();
-            } */
-
             //AUSTIN: no need to explain the math part here:) UR WELCOME
             // Denominator is the largest motor power (absolute value) or 1
             // This ensures all the powers maintain the same ratio, but only when

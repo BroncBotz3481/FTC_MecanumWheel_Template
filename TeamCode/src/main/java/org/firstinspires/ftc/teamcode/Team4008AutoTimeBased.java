@@ -18,12 +18,12 @@ public class Team4008AutoTimeBased extends LinearOpMode {
 
         moveForward(0.5,1000);
     }
-
+// This powers all the motors to move the robot forward for 1000 milseconds
     public void moveForward (double power, int time){
-        robot.DriveRightFront.setPower(-power);
-        robot.DriveLeftFront.setPower(-power);
-        robot.DriveRightBack.setPower(-power);
-        robot.DriveLeftBack.setPower(-power);
+        robot.DriveRightFront.setPower(power);
+        robot.DriveLeftFront.setPower(power);
+        robot.DriveRightBack.setPower(power);
+        robot.DriveLeftBack.setPower(power);
         sleep(time);
         robot.DriveRightFront.setPower(0);
         robot.DriveLeftFront.setPower(0);

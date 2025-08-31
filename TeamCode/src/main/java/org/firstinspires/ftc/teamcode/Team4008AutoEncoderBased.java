@@ -23,7 +23,8 @@ public class Team4008AutoEncoderBased extends LinearOpMode {
         driveForward(6, 0.5, 2500);
     }
 
-
+    //Converts ticks to inches
+    //https://firstroboticsbc.org/ftc/ftc-team-resources/autonomous-encoder-based-movement/
     public double inchesToTicks (double inches){
         return (inches * 537.7)/(2 * Math.PI * 1.9);
     }
@@ -72,33 +73,4 @@ public class Team4008AutoEncoderBased extends LinearOpMode {
         sleep(sleep);
     }
 
-    public void strafeRight(double inches, double power, int time) {
-
-        robot.DriveRightFront.setPower(-power);
-        robot.DriveLeftFront.setPower(power);
-        robot.DriveRightBack.setPower(power);
-        robot.DriveLeftBack.setPower(-power);
-
-        while (opModeIsActive() && Time.milliseconds() < time
-                && robot.DriveLeftFront.getCurrentPosition() < inchesToTicks(inches)
-                && robot.DriveRightBack.getCurrentPosition() < inchesToTicks(inches))
-        {
-            telemetry.addData("Encoder Val", robot.DriveLeftFront.getCurrentPosition());
-        }
-        robot.DriveRightFront.setPower(0);
-        robot.DriveLeftFront.setPower(0);
-        robot.DriveRightBack.setPower(0);
-        robot.DriveLeftBack.setPower(0);
-
-        robot.DriveLeftFront.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER); //Stops and resets the encoder to the 0 value for next use
-        robot.DriveLeftFront.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
-
-        Time.reset();
-
-    }
-
-    public double isNegitive(double encoder){
-
-        return encoder >= 0? 0.75: -0.75;
-    }
 }

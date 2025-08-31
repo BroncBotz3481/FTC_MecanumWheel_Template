@@ -16,15 +16,20 @@ public class Team4008HM2025 {
     public DcMotor DriveLeftFront = null;
     public DcMotor DriveRightFront = null;
 
+
+
+
+
+
     HardwareMap hwMap = null;
     //FIX AND USE IT
     public void Map(HardwareMap hardwareMap)
     {
         hwMap = hardwareMap;
-        DriveLeftFront = hwMap.get(DcMotor.class,"DriveLeftFront"); //0
-        DriveRightFront = hwMap.get(DcMotor.class,"DriveRightFront"); //1
-        DriveLeftBack = hwMap.get(DcMotor.class,"DriveLeftBack"); //2
-        DriveRightBack = hwMap.get(DcMotor.class,"DriveRightBack"); //3
+        DriveLeftFront = hwMap.get(DcMotor.class,"DriveLeftFront");
+        DriveRightFront = hwMap.get(DcMotor.class,"DriveRightFront");
+        DriveLeftBack = hwMap.get(DcMotor.class,"DriveLeftBack");
+        DriveRightBack = hwMap.get(DcMotor.class,"DriveRightBack");
         //   Lights = hwMap.get(RevBlinkinLedDriver.class,"Lights");
 
         DriveLeftFront.setDirection(DcMotor.Direction.FORWARD);
