@@ -11,6 +11,7 @@ public class SyntaxLesson extends LinearOpMode {
     @Override
     public void runOpMode() {
         robot.Map(hardwareMap);
+
         telemetry.addData("Say", "TeleOp Starting");
         telemetry.update();
 
@@ -22,7 +23,7 @@ public class SyntaxLesson extends LinearOpMode {
 
         while (opModeIsActive()) {
 
-
+            robot.motor.setPower(0.5);
 
             //Data Types
             int eger = 1;
@@ -57,7 +58,7 @@ public class SyntaxLesson extends LinearOpMode {
 
                 a) int                     1) -0.38
                 b) double                  2) false
-                c) String                  3) "4"
+                c) String                  3) "465"
                 D) boolean                 4) 100
 
                 ---------------------------------------------------------------------------------------------
@@ -90,17 +91,21 @@ public class SyntaxLesson extends LinearOpMode {
 
             //Short Hand If Statement
             boolean speedslow = gamepad1.right_bumper;
-             //      What                    T     F
+             //                 What         T     F
             double motorSpeed = speedslow ? 0.5 : 1.0;
 
 
             //Loops
-
             for (int i = 0; i < 5; i++){
-
+                System.out.println("this repeated " + i + "time");
             }
 
+            Boolean isPressed = false;
+            while (gamepad2.b){
+                isPressed = true;
+            }
 
+            //show methods in the autos
         }
     }
 }
