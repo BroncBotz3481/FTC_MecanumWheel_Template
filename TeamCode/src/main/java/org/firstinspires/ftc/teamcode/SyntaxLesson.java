@@ -23,7 +23,6 @@ public class SyntaxLesson extends LinearOpMode {
 
         while (opModeIsActive()) {
             
-
             //Data Types
             int eger = 1;
             double orNothing = 0.462;
