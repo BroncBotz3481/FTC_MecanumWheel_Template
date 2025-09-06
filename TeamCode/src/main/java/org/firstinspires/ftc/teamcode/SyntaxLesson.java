@@ -22,8 +22,7 @@ public class SyntaxLesson extends LinearOpMode {
         waitForStart();
 
         while (opModeIsActive()) {
-
-            robot.motor.setPower(0.5);
+            
 
             //Data Types
             int eger = 1;

@@ -28,7 +28,7 @@ public class Team4008TeleOp2025 extends LinearOpMode {
         waitForStart();
 
         while (opModeIsActive()) {
-            //AUSTIN: WRITE A COMMENT HERE EXPLAINING THE SPEED MODE
+
             boolean speedslow = gamepad1.right_bumper;
             double mag = speedslow ? 0.5 : 1.0;
 
@@ -36,17 +36,12 @@ public class Team4008TeleOp2025 extends LinearOpMode {
             double x = -gamepad1.left_stick_x * 1.1; // Counteract imperfect strafing
             double rx = -gamepad1.right_stick_x;
 
-            //deadzone
-            //AUSTIN: WRITE COMMENTS ABOUT HOW DEADZONE WORKS
+            //Optional Deadzones
 //            double y = (Math.abs(gamepad1.left_stick_y) > 0.1 ? gamepad1.left_stick_y : 0); // Remember, this is reversed!
 //            double x = -(Math.abs(gamepad1.left_stick_x) > 0.1 ? gamepad1.left_stick_x : 0) * 1.1; // Counteract imperfect strafing
 //            double rx = -gamepad1.right_stick_x;
 
 
-            //AUSTIN: no need to explain the math part here:) UR WELCOME
-            // Denominator is the largest motor power (absolute value) or 1
-            // This ensures all the powers maintain the same ratio, but only when
-            // at least one is out of the range [-1, 1]
             double denominator = Math.max(Math.abs(y) + Math.abs(x) + Math.abs(rx), 1.5);
             double frontLeftPower = (y + x + rx) / denominator;
             double backLeftPower = (y - x + rx) / denominator;
@@ -74,33 +69,32 @@ public class Team4008TeleOp2025 extends LinearOpMode {
             } else if (gamepad1.dpad_right){
                 moveRight(mag);
             }
+
+
+            //write your code here
         }
     }
-    //AUSTIN: NOTICE FOR MOVE FORWARD IT HAS NEGATIVE POWER?
-    //SOMEONE MESSED UP ON THE WIRING-SO WE INVERSED THE POWER TO COMPENSATE
-    //FIXED IT SO THE CODE TEMPLATE WORKS WITH NORMAL WIRING
-    //(HINT: moveForward(double power) would have positive power on all the motors(no negative sign)
-    //HERE'S YOUR REFERENCE SHEET
-    //https://gm0.org/en/latest/docs/software/tutorials/mecanum-drive.html
+
+    //Methods go here
     public void moveLeft (double power){
 
-        robot.DriveLeftFront.setPower(-power); robot.DriveRightFront.setPower(power);
-        robot.DriveLeftBack.setPower(power);   robot.DriveRightBack.setPower(-power);
+        robot.DriveLeftFront.setPower(power); robot.DriveRightFront.setPower(-power);
+        robot.DriveLeftBack.setPower(-power);   robot.DriveRightBack.setPower(power);
     }
     public void moveRight (double power){
         // Left Wheels                         //Right Wheels
-        robot.DriveLeftFront.setPower(power); robot.DriveRightFront.setPower(-power);
-        robot.DriveLeftBack.setPower(-power); robot.DriveRightBack.setPower(power);
+        robot.DriveLeftFront.setPower(-power); robot.DriveRightFront.setPower(power);
+        robot.DriveLeftBack.setPower(power); robot.DriveRightBack.setPower(-power);
     }
     public void moveForward (double power){
         // Left Wheels                         //Right Wheels
-        robot.DriveLeftFront.setPower(-power); robot.DriveRightFront.setPower(-power);
-        robot.DriveLeftBack.setPower(-power);  robot.DriveRightBack.setPower(-power);
+        robot.DriveLeftFront.setPower(power); robot.DriveRightFront.setPower(power);
+        robot.DriveLeftBack.setPower(power);  robot.DriveRightBack.setPower(power);
     }
     public void moveBackward (double power){
         // Left Wheels                         //Right Wheels
-        robot.DriveLeftFront.setPower(power); robot.DriveRightFront.setPower(power);
-        robot.DriveLeftBack.setPower(power);  robot.DriveRightBack.setPower(power);
+        robot.DriveLeftFront.setPower(-power); robot.DriveRightFront.setPower(-power);
+        robot.DriveLeftBack.setPower(-power);  robot.DriveRightBack.setPower(-power);
     }
     public void stopDriveTrainMotors (){
         // Left Wheels                         //Right Wheels

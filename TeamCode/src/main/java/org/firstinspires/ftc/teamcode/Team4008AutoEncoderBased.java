@@ -20,7 +20,7 @@ public class Team4008AutoEncoderBased extends LinearOpMode {
         waitForStart();
 
         Time.reset();
-        driveForward(6, 0.5, 2500);
+        driveForward(6, 0.5, 2500); //setting a time allows for the command to time out if it takes too long
     }
 
     //Converts ticks to inches
