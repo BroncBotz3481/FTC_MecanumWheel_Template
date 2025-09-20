@@ -3,8 +3,9 @@ package org.firstinspires.ftc.teamcode;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DcMotor;
+import com.qualcomm.robotcore.hardware.Servo;
 
-@TeleOp(name = "SyntaxLesson", group = "4008")
+
 public class SyntaxLesson extends LinearOpMode {
     Team4008HM2025 robot = new Team4008HM2025();
 
@@ -22,15 +23,17 @@ public class SyntaxLesson extends LinearOpMode {
         waitForStart();
 
         while (opModeIsActive()) {
-            
+
             //Data Types
             int eger = 1;
             double orNothing = 0.462;
-            float point = 3.54f;    //f is needed to specify it is a float and not a double
+            float point = gamepad1.left_trigger;
+            float name = 3.14f;
             boolean trueFalse = true;
             String words = "Isabella is super cool and awesome";
 
-            DcMotor motor = null;
+            //Like creating a variable, you can create motors, servos, sensors, and more
+            Servo claw = null;
 
             //Java is case sensitive so make sure you capitalize everything correctly
             // = assigns a value
@@ -44,6 +47,9 @@ public class SyntaxLesson extends LinearOpMode {
             System.out.println(num1 - num2); //Outputs -3.0
             System.out.println(num1 * num2); //Outputs 18.0
             System.out.println(num1 / num2); //Outputs 0.5
+
+            double x = 2/3; // this would store x as 0 because
+
             System.out.println(words);
 
             double num3 = num1 + num2/2;
