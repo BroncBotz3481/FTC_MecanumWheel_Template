@@ -22,7 +22,6 @@ public class Team4008HM2025 {
 
 
     HardwareMap hwMap = null;
-    //FIX AND USE IT
     public void Map(HardwareMap hardwareMap)
     {
         hwMap = hardwareMap;
@@ -52,6 +51,5 @@ public class Team4008HM2025 {
         DriveRightBack.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
         DriveRightBack.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
 
-//        ColorSensor = hwMap.get(NormalizedColorSensor.class, "sensor");
     }
 }

@@ -4,8 +4,6 @@ import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DcMotor;
 
-//AUSTIN: YOUR DEADLINE FOR THIS IS BEFORE KICKOFF
-//WE NEED YOUR CODE FOR KICKOFF DEMONSTRATION! HELP!
 @TeleOp(name = "Team4008TeleOp2025", group = "4008")
 public class Team4008TeleOp2025 extends LinearOpMode {
     Team4008HM2025 robot = new Team4008HM2025();
