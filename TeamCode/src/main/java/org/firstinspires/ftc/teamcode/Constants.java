@@ -10,8 +10,13 @@ import com.qualcomm.robotcore.hardware.HardwareMap;
 public class Constants {
 
     public class AutoTimeBasedConstants {
-        public static final AutoName = "Team4008AutoTimeBased"
-        public static final group = "4008"
+        public static final AutoName = "Team4008AutoTimeBased";
+        public static final group = "4008";
+    }
+
+    public class TeleopConstants {
+        public static final highPower = 0.8; // rough example 1
+        public static final highPower = 0.4; // rough example 2
     }
 
     public class movementMethods {

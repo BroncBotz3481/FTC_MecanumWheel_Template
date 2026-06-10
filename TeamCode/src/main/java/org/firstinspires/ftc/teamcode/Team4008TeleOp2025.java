@@ -22,7 +22,6 @@ public class Team4008TeleOp2025 extends LinearOpMode {
         robot.DriveLeftFront.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
         robot.DriveLeftFront.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
 
-        //robot.Lights.setPattern(RevBlinkinLedDriver.BlinkinPattern.BEATS_PER_MINUTE_PARTY_PALETTE);
         waitForStart();
 
         while (opModeIsActive()) {
@@ -34,7 +33,7 @@ public class Team4008TeleOp2025 extends LinearOpMode {
             double x = -gamepad1.left_stick_x * 1.1; // Counteract imperfect strafing
             double rx = -gamepad1.right_stick_x;
 
-            //Optional Deadzones
+            // Optional Deadzones
 //            double y = (Math.abs(gamepad1.left_stick_y) > 0.1 ? gamepad1.left_stick_y : 0); // Remember, this is reversed!
 //            double x = -(Math.abs(gamepad1.left_stick_x) > 0.1 ? gamepad1.left_stick_x : 0) * 1.1; // Counteract imperfect strafing
 //            double rx = -gamepad1.right_stick_x;
@@ -46,7 +45,6 @@ public class Team4008TeleOp2025 extends LinearOpMode {
             double frontRightPower = (y - x - rx) / denominator;
             double backRightPower = (y + x - rx) / denominator;
 
-            //AUSTIN: EXPLAIN HOW THE POWER WILL BE AFFECTED BY speedslow WITH mag
             robot.DriveLeftFront.setPower(frontLeftPower * mag);
             robot.DriveLeftBack.setPower(backLeftPower * mag);
             robot.DriveRightFront.setPower(frontRightPower * mag);
@@ -68,36 +66,13 @@ public class Team4008TeleOp2025 extends LinearOpMode {
                 moveRight(mag);
             }
 
-
-            //write your code here
         }
     }
 
-    //Methods go here
-    public void moveLeft (double power){
+    // class specific method that aren't in constants file go here
+    public void exampleMethod (double power){
 
         robot.DriveLeftFront.setPower(power); robot.DriveRightFront.setPower(-power);
         robot.DriveLeftBack.setPower(-power);   robot.DriveRightBack.setPower(power);
-    }
-    public void moveRight (double power){
-        // Left Wheels                         //Right Wheels
-        robot.DriveLeftFront.setPower(-power); robot.DriveRightFront.setPower(power);
-        robot.DriveLeftBack.setPower(power); robot.DriveRightBack.setPower(-power);
-    }
-    public void moveForward (double power){
-        // Left Wheels                         //Right Wheels
-        robot.DriveLeftFront.setPower(power); robot.DriveRightFront.setPower(power);
-        robot.DriveLeftBack.setPower(power);  robot.DriveRightBack.setPower(power);
-    }
-    public void moveBackward (double power){
-        // Left Wheels                         //Right Wheels
-        robot.DriveLeftFront.setPower(-power); robot.DriveRightFront.setPower(-power);
-        robot.DriveLeftBack.setPower(-power);  robot.DriveRightBack.setPower(-power);
-    }
-    public void stopDriveTrainMotors (){
-        // Left Wheels                         //Right Wheels
-        robot.DriveLeftFront.setPower(0);      robot.DriveRightFront.setPower(0);
-        robot.DriveRightBack.setPower(0);      robot.DriveLeftBack.setPower(0);
-
     }
 }
