@@ -34,22 +34,26 @@ public class Team4008HM2025 {
         DriveLeftFront.setDirection(DcMotor.Direction.FORWARD);
         DriveLeftFront.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
         DriveLeftFront.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
-        DriveLeftFront.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+        /* If you are using encoders, set to RUN_USING_ENCODER.
+         If you put RUN_USING_ENCODERS and there is no encoder value getting
+         recieved then the motor power is set to 1.0 even if you put a different
+         value */
+        DriveLeftFront.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
 
         DriveRightFront.setDirection(DcMotor.Direction.REVERSE);
         DriveRightFront.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
         DriveRightFront.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
-        DriveRightFront.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+        DriveRightFront.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
 
         DriveLeftBack.setDirection(DcMotor.Direction.FORWARD);
         DriveLeftBack.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
         DriveLeftBack.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
-        DriveLeftBack.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+        DriveLeftBack.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
 
         DriveRightBack.setDirection(DcMotor.Direction.REVERSE);
         DriveRightBack.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
         DriveRightBack.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
-        DriveRightBack.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+        DriveRightBack.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
 
     }
 }
